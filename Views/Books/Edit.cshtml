@@ -1,0 +1,69 @@
+﻿@model mysql_connect.Models.Book
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h4>Edit: Book</h4>
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="no" />
+
+           
+
+         <div class="form-group">
+            <label asp-for="judulbuku" class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9">
+                <input asp-for="judulbuku" class="form-control" id="judulbuku" type="text" />
+                <span asp-validation-for="judulbuku" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="pengarang" class="col-sm-3 col-form-label"></label>
+         
+            <div class="col-sm-9">
+                <input asp-for="pengarang" class="form-control" id="pengarang" type="text" />
+                <span asp-validation-for="pengarang" class="text-danger"></span>
+              
+        </div>
+        <div class="form-group">
+            <label asp-for="harga" class="col-sm-3 col-form-label"></label>
+           
+            <div class="col-sm-9">
+                <input asp-for="harga" class="form-control" id="harga" type="text" />
+                <span asp-validation-for="harga" class="text-danger"></span>
+               
+        </div>
+        <div class="form-group">
+            <label asp-for="penerbit" class="col-sm-3 col-form-label"></label>
+           
+            <div class="col-sm-9">
+                <input asp-for="penerbit" class="form-control" id="penerbit" type="text" />
+                <span asp-validation-for="penerbit" class="text-danger"></span>
+              
+        </div>
+        <div class="form-group">
+            <label class="form-label">input gambar</label>
+            <input type="file" class="form-control" name="image">
+        </div>
+            @*button*@
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9">
+                <input type="submit" value="Update" class="btn btn-primary" />
+            </div>
+        </div>
+
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,12 @@
+﻿using System;
+namespace mysql_connect.wwwroot.css
+{
+    public class custom
+    {
+        public custom()
+{
+    <div class="image-section"> <img src="/bookStore/Views/Home/image/bookstore.png" alt="Bookstore"> </div>
+}
+    }
+}
+

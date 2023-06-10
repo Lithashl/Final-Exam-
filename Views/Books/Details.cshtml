@@ -1,0 +1,35 @@
+﻿@model mysql_connect.Models.Book
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="col-md-8">
+    <h4>Details: Book</h4>
+    <hr />
+    <table class="BlueGreen">
+        <tr><th>No</th><td>@Model.no</td></tr>
+        <tr><th>Book Names</th><td>@Model.judulbuku</td></tr>
+        <tr><th>Author</th><td>@Model.pengarang</td></tr>
+        <tr><th>Price</th><td>@Model.harga</td></tr>
+        <tr><th>Category</th><td>@Model.kategori</td></tr>
+        <tr><th>Image</th><td>@Model.gambar</td></tr>
+
+        <!--<thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Book Names</th>
+                <th scope="col">Author</th>
+                <th scope="col">Price</th>
+                <th scope="col">Category</th>
+                <th scope="col">Image</th>-->
+                @*<th scope="col">Action</th>*@
+            <!--</tr>
+        </thead>-->
+
+    </table>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.no">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

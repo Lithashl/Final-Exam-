@@ -1,0 +1,115 @@
+﻿@model mysql_connect.Models.Book
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4>Create: Book</h4>
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            @*<div class="modal-body">
+                <section class="form-group">
+                    <label class="form-label">Book Names</label>
+                    <input type="text" class="form-control" id="c.name" placeholder="Please input book names" value="judulbuku" required>
+                </section>
+                <section class="form-group">
+                    <label class="form-label">Author</label>
+                    <input type="text" class="form-control" id="author" placeholder="Please input author names" value="" required>
+                </section>
+                <section class="form-group">
+                    <label class="form-label">Price</label>
+                    <input type="text" class="form-control" id="price" placeholder="Please input price" value="" required>
+                </section>
+                <section class="form-group">
+                    <label class="form-label">Synopsis</label>
+                    <input type="text" class="form-control" id="synopsis" placeholder="Please input synopsis" value="" required>
+                </section>
+                <section class="form-group">
+                    <label class="form-label">input gambar</label>
+                    <input type="file" class="form-control" id="image">
+                </section>
+            </div>
+
+            <div class="form-group row">
+            <label class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </div>*@
+
+        <div class="row">
+            <div class="col-md-8">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group row">
+                        <label asp-for="judulbuku" class="col-sm-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <input asp-for="judulbuku" class="form-control" id="judulbuku" type="text" />
+                            <span asp-validation-for="judulbuku" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label asp-for="pengarang" class="col-sm-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <input asp-for="pengarang" class="form-control" id="pengarang" type="text" />
+                            <span asp-validation-for="pengarang" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label asp-for="harga" class="col-sm-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <input asp-for="harga" class="form-control" id="harga" type="text" />
+                            <span asp-validation-for="harga" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label asp-for="penerbit" class="col-sm-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <input asp-for="penerbit" class="form-control" id="penerbit" type="text" />
+                            <span asp-validation-for="penerbit" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="kategori" class="col-sm-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <input asp-for="kategori" class="form-control" id="kategori" type="text" />
+                            <span asp-validation-for="kategori" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                 <section class="form-group">
+                    <label class="form-label">input gambar</label>
+                    <input type="file" class="form-control" id="image">
+                </section>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+          
+        </form>
+       
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
